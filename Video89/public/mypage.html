@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App - For Fetch Request</title>
+</head>
+
+<body>
+    <h1>Hi , Fetch !!</h1>
+    <script>
+
+        const obj = {
+            name: 'antor',
+            age: 21
+        }
+
+        // async function testPost() {
+        //     let a = await fetch('http://localhost:3000/', {method: "POST"})
+        //     let b = await a.text();
+        //     console.log(b);
+        // }
+
+        const testGet = () => {
+            fetch('http://localhost:3000/', {
+                method: "get",
+            })
+                .then(res => res.text())
+                .then(data => console.log(data))
+        }
+
+        const testPost = () => {
+            fetch('http://localhost:3000/', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(obj)
+            })
+                .then(res => res.text())
+                .then(data => console.log(data))
+        }
+
+        const testPut = () => {
+            fetch('http://localhost:3000/', {
+                method: "PUT",
+            })
+                .then(res => res.text())
+                .then(data => console.log(data))
+        }
+
+        const testDelete = () => {
+            fetch('http://localhost:3000/', {
+                method: "DELETE",
+            })
+                .then(res => res.text())
+                .then(data => console.log(data))
+        }
+
+        // testGet()
+        // testPost()
+        // testPut()
+        testDelete()
+    </script>
+</body>
+
+</html>
